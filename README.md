@@ -27,27 +27,26 @@
      docker-machine create -d virtualbox --virtualbox-cpu-count=2 \
          --virtualbox-memory=8192 --virtualbox-disk-size=50000 default
      ```
-4. Run the quickstart terminal by clicking the icon on the desktop
-5. Create the volume
+4. Create the volume
 
    In the terminal that appears type the following command to create a volume.
    ```
    docker volume create --name myvolume
    docker run -it --rm -v myvolume:/workdir busybox chown -R 1000:1000 /workdir
    ```
-6. Create and run a samba container
+5. Create and run a samba container
 
    This container is what will allow you to see the files in the volume.
    ```
    docker create -p 127.0.0.1:137-139:137-139 -p 127.0.0.1:445:445 \
        --name samba -v myvolume:/workdir samba
    ```
-7. Start the samba container
+6. Start the samba container
 
    ```
    docker start samba
    ```
-8. Get the ip address used to talk to samba and open /workdir
+7. Get the ip address used to talk to samba and open /workdir
 
    ```
    docker-machine ip
@@ -58,7 +57,7 @@
    ```
    \\192.168.99.100\workdir
    ```
-9. Start a container to do work.
+8. Start a container to do work.
 
    You can now use any of the other containers such as the poky
    container. The important part to remember is that the volume created above,
