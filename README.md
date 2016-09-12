@@ -38,7 +38,7 @@
 
    This container is what will allow you to see the files in the volume.
    ```
-   docker create -p 127.0.0.1:137-139:137-139 -p 127.0.0.1:445:445 \
+   docker create -p 137-139:137-139 -p 445:445 \
        --name samba -v myvolume:/workdir crops/samba
    ```
 6. Start the samba container
