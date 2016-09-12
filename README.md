@@ -24,8 +24,7 @@
          It is recommended that this be at least 50GB since building generates
          a lot* of output. In this example we'll choose 50GB.
      ```
-     docker-machine create -d virtualbox --virtualbox-cpu-count=2 \
-         --virtualbox-memory=8192 --virtualbox-disk-size=50000 default
+     docker-machine create -d virtualbox --virtualbox-cpu-count=2 --virtualbox-memory=8192 --virtualbox-disk-size=50000 default
      ```
 4. Create the volume
 
@@ -38,8 +37,7 @@
 
    This container is what will allow you to see the files in the volume.
    ```
-   docker create -p 137-139:137-139 -p 445:445 \
-       --name samba -v myvolume:/workdir crops/samba
+   docker create -p 137-139:137-139 -p 445:445 --name samba -v myvolume:/workdir crops/samba
    ```
 6. Start the samba container
 
@@ -64,6 +62,5 @@
    is the one to use when specifying the workdir. For example, to run the
    poky container:
    ```
-   docker run --rm -it -v myvolume:/workdir crops/poky \
-       --workdir=/workdir
+   docker run --rm -it -v myvolume:/workdir crops/poky --workdir=/workdir
    ```
