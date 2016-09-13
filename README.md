@@ -1,31 +1,6 @@
-1. Install docker toolbox from https://www.docker.com/products/docker-toolbox
-2. Run the docker quickstart terminal
-3. Change default vm settings (Only needed once)
-  1. Remove the default vm
-
-     ```
-     docker-machine rm default
-     ```
-  2. Re-create the default vm
-     * Choose the number of cpus: **--virtualbox-cpu-count**
-
-         Since this is based on the hardware, there is no "correct" amount. For
-         this example we'll use two.
-
-
-     * Choose the amount of RAM: **--virtualbox-memory**
-
-         This is also based on the host hardware. However, choose at least
-         4GB. In this example, we'll choose 8GB.
-
-
-     * Choose the amount of disk space: **--virtualbox-disk-size**
-
-         It is recommended that this be at least 50GB since building generates
-         a lot* of output. In this example we'll choose 50GB.
-     ```
-     docker-machine create -d virtualbox --virtualbox-cpu-count=2 --virtualbox-memory=8192 --virtualbox-disk-size=50000 default
-     ```
+1. Install docker for mac from https://docs.docker.com/docker-for-mac/
+2. Run the docker app
+3. Start a terminal
 4. Create the volume
 
    In the terminal that appears type the following command to create a volume.
