@@ -1,5 +1,11 @@
 1. Install docker for mac from https://docs.docker.com/docker-for-mac/
 2. Run the docker app
+3. Create an alias for *127.0.0.1*
+
+   OSX will not let you connect to a locally running samba share. Therefore, create an alias for *127.0.0.1* of *127.0.0.2*.
+   ```
+   sudo ifconfig lo0 127.0.0.2 alias up
+   ```
 3. Start a terminal
 4. Create the volume
 
